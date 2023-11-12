@@ -1,113 +1,87 @@
+"use client";
+import { Button } from '@/components/Button'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import Image from 'next/image'
+import { SectionSeparator } from '@/components/SectionSeparator';
 
-export default function Home() {
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
+
+const Home = () =>{
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+    <main>
+      <section className='flex justify-between ' >
+        <img src='/flowersTopLeft.svg' />
+        <section className='flex items-center'>
+          <div className='text-primaryColor text-2xl font-thin italic'>Unidos por el proposito de Dios</div>
+        </section>
+        <img src='/FlowersTopRight.svg' />
+      </section>
+      <section className='flex justify-between '>
+       <img src='/LeftBird.svg' />
+        <section className='relative'>
+        <img src='/lovers.svg' />
+          <section className='absolute bottom-28 left-20'>
+            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center'>La boda de</div>
+            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center'>Jaime Arriola </div>
+            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center' >y </div>
+            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center' >Lesly Hernandez  </div>
+          </section>
+        </section>
+        <img src='/RightBird.svg' />
+      </section>
+      <section className='flex justify-center flex-col items-center' >
+        <Button/>
+        <section className='bg-gradient-to-b font-thin italic p-5 rounded mt-5 from-white to-primaryColor flex flex-col items-center justify-end w-3/4'>
+          <section>El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
+          <section>Proverbios 18:22</section>
+        </section>
+      </section>
+     <SectionSeparator/>
+     <section className='flex justify-center items-center' >
+      <img src='/leftDecSec2.svg' />
+      <label className='text-primaryColor text-2xl font-thin italic' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <img src='/rightSecDec2.svg' />
+     </section>
+      <section className='flex flex-col justify-center items-center'>
+      <Carousel 
+        responsive={responsive}
+        showDots={true}
+        infinite={true}
+        autoPlaySpeed={500}
+        draggable={true}
+        ssr={true}
+        itemClass='flex items-center justify-center w-96 h-96'
+        containerClass='h-[500px] w-1/2 rounded'
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <img className='w-full h-[500px]' src='/lovers1.jpeg' />
+        <img className='w-full h-[500px]' src='/lovers2.jpg' />
+        <img className='w-full h-[500px]' src='/lovers3.jpeg' />
+        <img className='w-full h-[500px]' src='/lovers4.jpg' />
+        <img className='w-full h-[500px]' src='/lovers5.jpeg' />
+        <img className='w-full h-[500px]' src='/lovers6.jpeg' />
+      </Carousel>
+      <label className='text-primaryColor text-lg font-thin italic mt-5 pr-24 pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que hablamos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
+      </section>
+      <SectionSeparator/>
     </main>
   )
 }
+
+export default Home
