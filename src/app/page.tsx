@@ -195,15 +195,18 @@ const Home = () =>{
         <img src='/flowerLeft.svg' className='hidden md:block' />
         <section className='flex items-center justify-center flex-col'>
           <section className='flex justify-center '>
-            <label className=' text-primaryColor text-3xl font-thin italic text-center'>Acompañanos en nuestro dia especial</label>
+            <label className=' text-primaryColor text-2xl md:text-3xl font-thin italic text-center'>Acompañanos en nuestro dia especial</label>
           </section>
           <section className='flex flex-col justify-center items-center'>
-            <PrimaryText text="Fecha: 23 de diciembre" />
-            <PrimaryText  text="Nuestra boda" />
+            <PrimaryText styles="mt-4" text="Fecha: 23 de diciembre" />
+            <section>
+              
+            </section>
+            <PrimaryText styles="m-4" text="Nuestra boda" />
             <BoldAndThinText boldText='Hora:' thinText=' 3:30 PM - 5:00 PM'/>
             <BoldAndThinText boldText='Lugar: ' thinText='Iglesia Cristiana Rey de Reyes'/>
             <PrimaryText  thin text='2902 Fulton St, Brooklyn, NY 11207' />
-            <PrimaryText text="Recepcion" />
+            <PrimaryText styles="mb-4 mt-4" text="Recepcion" />
             <BoldAndThinText boldText="Hora: " thinText="6:00 PM - 9:30 PM" />
             <BoldAndThinText boldText="Lugar: " thinText="193 Bradford St, Brooklyn, NY 11207" />
           </section>
