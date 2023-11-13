@@ -57,10 +57,18 @@ const Home = () =>{
         </section>
       </section>
      <SectionSeparator/>
-     <section className='flex justify-center items-center' >
-      <img src='/leftDecSec2.svg' className='w-16 md:w-44 mb-5 md:mb-0'/>
-      <label className='text-primaryColor text-base md:text-2xl font-thin italic text-center ' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+     <section className='flex flex-col md:flex-row justify-center items-center' >
+      <section className='flex justify-between w-full block md:hidden'>
+      <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
       <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
+      </section>
+      <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
+      <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 text-center ' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
+      <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
+      <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
+      <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
+      </section>
      </section>
       <section className='flex flex-col justify-center items-center'>
       <Carousel 
@@ -84,7 +92,7 @@ const Home = () =>{
       </section>
       <SectionSeparator/>
       <section className='flex justify-between items-center '>
-        <img src='/heartLeft.svg' />
+        <img src='/heartLeft.svg' className='hidden md:block'/>
           <section className='w-[560px]' >
             <label className=' text-primaryColor text-3xl font-thin italic text-center'>Quieres hacernos un regalo en efectivo? Utiliza los siguientes medios</label>
             <section className='flex justify-center flex-col items-center mt-8'>
@@ -98,11 +106,11 @@ const Home = () =>{
               </section>
             </section>
           </section>
-        <img src='/hearthRight.svg' />
+        <img src='/hearthRight.svg' className='hidden md:block'/>
       </section>
       <SectionSeparator/>
       <section className='flex justify-between'>
-        <img src='/flowerLeft.svg' />
+        <img src='/flowerLeft.svg' className='hidden md:block' />
         <section className='flex items-center justify-center flex-col'>
           <section className='flex justify-center '>
             <label className=' text-primaryColor text-3xl font-thin italic text-center'>Acompañanos en nuestro dia especial</label>
@@ -116,7 +124,7 @@ const Home = () =>{
           </section>
         </section>
         
-        <img src='/floweRight.svg' />
+        <img src='/floweRight.svg' className='hidden md:block'/>
       </section>
     </main>
   )
