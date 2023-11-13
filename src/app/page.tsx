@@ -2,7 +2,6 @@
 import { Button } from '@/components/Button'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Image from 'next/image'
 import { SectionSeparator } from '@/components/SectionSeparator';
 
 const responsive = {
@@ -78,6 +77,27 @@ const Home = () =>{
         <img className='w-full h-[500px]' src='/lovers6.jpeg' />
       </Carousel>
       <label className='text-primaryColor text-lg font-thin italic mt-5 pr-24 pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que hablamos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
+      </section>
+      <SectionSeparator/>
+      <section className='flex justify-between items-center '>
+        <img src='/heartLeft.svg' />
+          <section className='w-[560px]' >
+            <label className=' text-primaryColor text-3xl font-thin italic text-center'>Quieres hacernos un regalo en efectivo? Utiliza los siguientes medios</label>
+            <section className='flex justify-center flex-col items-center mt-8'>
+              <section>
+                <label className='text-primaryColor text-lg'>Zelle:</label>
+                <label className='text-primaryColor text-lg font-thin'>+1 917-547-2845</label>
+              </section>
+              <section>
+                <label className='text-primaryColor text-lg'>Paypal:</label>
+                <label className='text-primaryColor text-lg font-thin'>lhernandez@flushinginternational.org</label>
+              </section>
+            
+            </section>
+
+          </section>
+            
+        <img src='/hearthRight.svg' />
       </section>
       <SectionSeparator/>
     </main>
