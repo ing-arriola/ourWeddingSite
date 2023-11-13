@@ -1,11 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Button } from '@/components/Button'
+
 import Carousel from "react-multi-carousel";
+import Lottie from 'react-lottie';
 import "react-multi-carousel/lib/styles.css";
+
+import * as animationData from '@/helpers/heartsAnimation.json'
+import * as loveAnimation from '@/helpers/animation2.json'
+import * as envelopeAnimation from '@/helpers/envelope.json'
+
 import { SectionSeparator } from '@/components/SectionSeparator';
 import { BoldAndThinText } from '@/components/BoldAndThinText';
 import { PrimaryText } from '@/components/PrimaryText';
+import { Button } from '@/components/Button'
+
+
+
 
 const responsive = {
   desktop: {
@@ -19,11 +29,40 @@ const responsive = {
     slidesToSlide: 2 // optional, default to 1.
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 650, min: 0 },
     items: 1,
     slidesToSlide: 1 // optional, default to 1.
   }
 };
+
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true, 
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
+
+const envelopeAnimationOptions = {
+  loop: true,
+  autoplay: true, 
+  animationData: envelopeAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
+
+const loveAnimationOptions = {
+  loop: true,
+  autoplay: true, 
+  animationData: loveAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
+
 
 const Home = () =>{
   return (
@@ -49,7 +88,10 @@ const Home = () =>{
         <img src='/RightBird.svg' className='hidden md:block' alt='Right Bird Image'/>
       </section>
       <section className='flex justify-center flex-col items-center' >
-      <img src='/LeftBird.svg' className='w-20 mb-5 md:hidden' alt='Left Bird Image'/>
+        <Lottie options={defaultOptions}
+              height={100}
+              width={100}
+        />
         <Button/>
         <section className='bg-gradient-to-b font-thin italic p-3 md:p-5 rounded mt-5 from-white to-primaryColor  flex flex-col items-center justify-end w-full md:w-3/4'>
           <section className='text-sm md:text-lg text-center' >El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
@@ -58,19 +100,25 @@ const Home = () =>{
       </section>
      <SectionSeparator/>
      <section className='flex flex-col md:flex-row justify-center items-center' >
-      <section className='flex justify-between w-full block md:hidden'>
+      {/* <section className='flex justify-between w-full block md:hidden'>
       <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
       <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
-      </section>
+      </section> */}
       <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
+      
       <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 text-center ' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <Lottie options={envelopeAnimationOptions}
+              height={100}
+              width={100}
+        />
       <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
-      <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
+     {/*  <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
       <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
       <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
-      </section>
+      </section> */}
      </section>
       <section className='flex flex-col justify-center items-center'>
+        
       <Carousel 
         responsive={responsive}
         showDots={true}
@@ -88,7 +136,11 @@ const Home = () =>{
         <img className='w-full h-[500px]' src='/lovers5.jpeg' />
         <img className='w-full h-[500px]' src='/lovers6.jpeg' />
       </Carousel>
-      <label className='text-primaryColor text-lg font-thin italic mt-5 pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez nos vimos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
+      <Lottie options={loveAnimationOptions}
+              height={100}
+              width={100}
+        />
+      <label className='text-primaryColor text-lg font-thin italic pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que nos vimos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
       </section>
       <SectionSeparator/>
       <section className='flex justify-center md:justify-between items-center '>
@@ -108,6 +160,7 @@ const Home = () =>{
           </section>
         <img src='/hearthRight.svg' className='hidden md:block'/>
       </section>
+      
       <SectionSeparator/>
       <section className='flex justify-between'>
         <img src='/flowerLeft.svg' className='hidden md:block' />
@@ -116,11 +169,14 @@ const Home = () =>{
             <label className=' text-primaryColor text-3xl font-thin italic text-center'>Acompañanos en nuestro dia especial</label>
           </section>
           <section className='flex flex-col justify-center items-center'>
-            <label className='text-primaryColor text-lg'>Fecha: 23 de diciembre</label>
-            <label className='text-primaryColor text-lg'>Nuestra boda</label>
+            <PrimaryText text="Fecha: 23 de diciembre" />
+            <PrimaryText  text="Nuestra boda" />
             <BoldAndThinText boldText='Hora:' thinText=' 3:30 PM - 5:00 PM'/>
             <BoldAndThinText boldText='Lugar: ' thinText='Iglesia Cristiana Rey de Reyes'/>
-            <PrimaryText  text='2902 Fulton St, Brooklyn, NY 11207' />
+            <PrimaryText  thin text='2902 Fulton St, Brooklyn, NY 11207' />
+            <PrimaryText text="Recepcion" />
+            <BoldAndThinText boldText="Hora: " thinText="6:00 PM - 9:30 PM" />
+            <BoldAndThinText boldText="Lugar: " thinText="193 Bradford St, Brooklyn, NY 11207" />
           </section>
         </section>
         
