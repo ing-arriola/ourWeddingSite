@@ -107,7 +107,7 @@ const Home = () =>{
       <section className='flex justify-center flex-col items-center' >
         <Lottie options={defaultOptions}
               height={100}
-              width={100}
+              width={220}
         />
         <Button/>
         <section className=' border-solid border-primaryColor border-2 font-thin italic p-2 md:p-5 rounded mt-5 flex flex-col items-center justify-end w-96 md:w-3/4'>
@@ -115,7 +115,7 @@ const Home = () =>{
           <section className='text-sm md:text-lg text-primaryColor'>Proverbios 18:22</section>
         </section>
       </section>
-     <SectionSeparator/>
+     <SectionSeparator bottomMargin={false}/>
      <section className='flex flex-col md:flex-row justify-center items-center' >
       {/* <section className='flex justify-between w-full block md:hidden'>
       <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
@@ -123,7 +123,7 @@ const Home = () =>{
       </section> */}
       <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
       
-      <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 text-center ' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 text-center '>Dios dibujo para si mismo sonrisas en nuestros corazones</label>
       
       <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
      {/*  <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
