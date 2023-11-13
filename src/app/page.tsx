@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { Button } from '@/components/Button'
 import Carousel from "react-multi-carousel";
@@ -27,38 +28,38 @@ const responsive = {
 const Home = () =>{
   return (
     <main>
-      <section className='flex justify-between' >
-        <img src='/flowersTopLeft.svg' />
+      <section className='flex justify-between w-full'>
+        <img src='/flowersTopLeft.svg' className='w-28 md:w-40 '/>
         <section className='flex items-center'>
-          <div className='text-primaryColor text-2xl font-thin italic'>Unidos por el proposito de Dios</div>
+          <div className='text-primaryColor font-thin italic text-base md:text-2xl text-center'>Unidos por el proposito de Dios</div>
         </section>
-        <img src='/FlowersTopRight.svg' />
+        <img src='/FlowersTopRight.svg' className='w-28 md:w-40'/>
       </section>
-      <section className='flex justify-between '>
-       <img src='/LeftBird.svg' />
+      <section className='flex justify-center md:justify-between '>
+       <img src='/LeftBird.svg' className='hidden md:block' alt='Left Bird Image'/>
         <section className='relative'>
-        <img src='/lovers.svg' />
-          <section className='absolute bottom-28 left-20'>
-            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center'>La boda de</div>
-            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center'>Jaime Arriola </div>
-            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center' >y </div>
-            <div className='text-primaryColor text-4xl font-thin italic w-[282px] text-center' >Lesly Hernandez  </div>
+        <img src='/lovers.svg' className='w-60 md:w-[445px]'/>
+          <section className='absolute bottom-[50px] left-[-20px] md:bottom-28 md:left-20'>
+            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center'>La boda de</div>
+            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center'>Jaime Arriola </div>
+            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center' >y </div>
+            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center' >Lesly Hernandez  </div>
           </section>
         </section>
-        <img src='/RightBird.svg' />
+        <img src='/RightBird.svg' className='hidden md:block' alt='Right Bird Image'/>
       </section>
       <section className='flex justify-center flex-col items-center' >
         <Button/>
-        <section className='bg-gradient-to-b font-thin italic p-5 rounded mt-5 from-white to-primaryColor flex flex-col items-center justify-end w-3/4'>
-          <section>El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
-          <section>Proverbios 18:22</section>
+        <section className='bg-gradient-to-b font-thin italic p-3 md:p-5 rounded mt-5 from-white to-primaryColor  flex flex-col items-center justify-end w-3/4'>
+          <section className='text-sm md:text-lg text-center' >El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
+          <section className='text-sm md:text-lg'>Proverbios 18:22</section>
         </section>
       </section>
      <SectionSeparator/>
      <section className='flex justify-center items-center' >
-      <img src='/leftDecSec2.svg' />
-      <label className='text-primaryColor text-2xl font-thin italic' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
-      <img src='/rightSecDec2.svg' />
+      <img src='/leftDecSec2.svg' className='w-16 md:w-44 mb-5 md:mb-0'/>
+      <label className='text-primaryColor text-base md:text-2xl font-thin italic text-center ' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
      </section>
       <section className='flex flex-col justify-center items-center'>
       <Carousel 
@@ -69,7 +70,7 @@ const Home = () =>{
         draggable={true}
         ssr={true}
         itemClass='flex items-center justify-center w-96 h-96'
-        containerClass='h-[500px] w-1/2 rounded'
+        containerClass='h-[500px] w-80 md:w-1/2 rounded'
         >
         <img className='w-full h-[500px]' src='/lovers1.jpeg' />
         <img className='w-full h-[500px]' src='/lovers2.jpg' />
@@ -78,7 +79,7 @@ const Home = () =>{
         <img className='w-full h-[500px]' src='/lovers5.jpeg' />
         <img className='w-full h-[500px]' src='/lovers6.jpeg' />
       </Carousel>
-      <label className='text-primaryColor text-lg font-thin italic mt-5 pr-24 pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que hablamos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
+      <label className='text-primaryColor text-lg font-thin italic mt-5 pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que hablamos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
       </section>
       <SectionSeparator/>
       <section className='flex justify-between items-center '>
