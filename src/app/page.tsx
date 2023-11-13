@@ -3,6 +3,8 @@ import { Button } from '@/components/Button'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SectionSeparator } from '@/components/SectionSeparator';
+import { BoldAndThinText } from '@/components/BoldAndThinText';
+import { PrimaryText } from '@/components/primaryText';
 
 const responsive = {
   desktop: {
@@ -25,7 +27,7 @@ const responsive = {
 const Home = () =>{
   return (
     <main>
-      <section className='flex justify-between ' >
+      <section className='flex justify-between' >
         <img src='/flowersTopLeft.svg' />
         <section className='flex items-center'>
           <div className='text-primaryColor text-2xl font-thin italic'>Unidos por el proposito de Dios</div>
@@ -92,14 +94,28 @@ const Home = () =>{
                 <label className='text-primaryColor text-lg'>Paypal:</label>
                 <label className='text-primaryColor text-lg font-thin'>lhernandez@flushinginternational.org</label>
               </section>
-            
             </section>
-
           </section>
-            
         <img src='/hearthRight.svg' />
       </section>
       <SectionSeparator/>
+      <section className='flex justify-between'>
+        <img src='/flowerLeft.svg' />
+        <section className='flex items-center justify-center flex-col'>
+          <section className='flex justify-center '>
+            <label className=' text-primaryColor text-3xl font-thin italic text-center'>Acompañanos en nuestro dia especial</label>
+          </section>
+          <section className='flex flex-col justify-center items-center'>
+            <label className='text-primaryColor text-lg'>Fecha: 23 de diciembre</label>
+            <label className='text-primaryColor text-lg'>Nuestra boda</label>
+            <BoldAndThinText boldText='Hora:' thinText=' 3:30 PM - 5:00 PM'/>
+            <BoldAndThinText boldText='Lugar: ' thinText='Iglesia Cristiana Rey de Reyes'/>
+            <PrimaryText  text='2902 Fulton St, Brooklyn, NY 11207' />
+          </section>
+        </section>
+        
+        <img src='/floweRight.svg' />
+      </section>
     </main>
   )
 }
