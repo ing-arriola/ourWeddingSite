@@ -5,7 +5,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SectionSeparator } from '@/components/SectionSeparator';
 import { BoldAndThinText } from '@/components/BoldAndThinText';
-import { PrimaryText } from '@/components/primaryText';
+import { PrimaryText } from '@/components/PrimaryText';
 
 const responsive = {
   desktop: {
