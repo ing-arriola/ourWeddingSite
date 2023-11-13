@@ -8,6 +8,8 @@ import "react-multi-carousel/lib/styles.css";
 import * as animationData from '@/helpers/heartsAnimation.json'
 import * as loveAnimation from '@/helpers/animation2.json'
 import * as envelopeAnimation from '@/helpers/envelope.json'
+import * as giftAnimation from '@/helpers/gift.json'
+import * as thanksAnimation from '@/helpers/thanks.json'
 
 import { SectionSeparator } from '@/components/SectionSeparator';
 import { BoldAndThinText } from '@/components/BoldAndThinText';
@@ -58,6 +60,24 @@ const loveAnimationOptions = {
   loop: true,
   autoplay: true, 
   animationData: loveAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
+
+const giftAnimationOptions = {
+  loop: true,
+  autoplay: true, 
+  animationData: giftAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+};
+
+const thanksAnimationOptions = {
+  loop: true,
+  autoplay: true, 
+  animationData: thanksAnimation,
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice'
   }
@@ -147,7 +167,11 @@ const Home = () =>{
         <img src='/heartLeft.svg' className='hidden md:block'/>
           <section className='w-96 md:w-[560px] flex justify-center flex-col' >
             <label className=' text-primaryColor text-xl md:text-3xl font-thin italic text-center'>Quieres hacernos un regalo en efectivo? Utiliza los siguientes medios</label>
-            <section className='flex justify-center flex-col items-center mt-8'>
+            <Lottie options={giftAnimationOptions}
+              height={100}
+              width={100}
+            />
+            <section className='flex justify-center flex-col items-center'>
               <section>
                 <label className='text-primaryColor text-lg'>Zelle:</label>
                 <label className='text-primaryColor text-lg font-thin'>+1 917-547-2845</label>
@@ -157,11 +181,16 @@ const Home = () =>{
                 <label className='text-primaryColor text-lg font-thin'>lhernandez@flushinginternational.org</label>
               </section>
             </section>
+            <Lottie options={thanksAnimationOptions}
+              height={100}
+              width={250}
+            />
           </section>
+          
         <img src='/hearthRight.svg' className='hidden md:block'/>
       </section>
       
-      <SectionSeparator/>
+      <SectionSeparator topMargin={false}/>
       <section className='flex justify-between'>
         <img src='/flowerLeft.svg' className='hidden md:block' />
         <section className='flex items-center justify-center flex-col'>
