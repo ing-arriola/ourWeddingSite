@@ -23,9 +23,9 @@ const responsive = {
     slidesToSlide: 2 // optional, default to 1.
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 2 // optional, default to 1.
+    breakpoint: { max: 1024, min: 650 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 650, min: 0 },
@@ -155,12 +155,12 @@ const Home = () =>{
                 width={200}
           />
       <label className='text-primaryColor text-lg font-thin italic pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que nos vimos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
-      <section className="block md:hidden">
+
         <Lottie options={envelopeAnimationOptions}
                 height={200}
                 width={200}
           />
-      </section>
+
       </section>
       <SectionSeparator topMargin={false}/>
       <section className='flex justify-center md:justify-between items-center '>
@@ -190,8 +190,8 @@ const Home = () =>{
         <img src='/hearthRight.svg' className='hidden md:block'/>
       </section>
       
-      <SectionSeparator topMargin={false}/>
-      <section className='flex justify-between'>
+      <SectionSeparator topMargin={false} bottomMargin={false}/>
+      <section className='flex justify-center md:justify-between mt-5 md:mt-0'>
         <img src='/flowerLeft.svg' className='hidden md:block' />
         <section className='flex items-center justify-center flex-col'>
           <section className='flex justify-center '>
@@ -199,8 +199,7 @@ const Home = () =>{
           </section>
           <section className='flex flex-col justify-center items-center'>
             <PrimaryText styles="mt-4" text="Fecha: 23 de diciembre" />
-            <section>
-              
+            <section>         
             </section>
             <PrimaryText styles="m-4" text="Nuestra boda" />
             <BoldAndThinText boldText='Hora:' thinText=' 3:30 PM - 5:00 PM'/>
@@ -210,10 +209,17 @@ const Home = () =>{
             <BoldAndThinText boldText="Hora: " thinText="6:00 PM - 9:30 PM" />
             <BoldAndThinText boldText="Lugar: " thinText="193 Bradford St, Brooklyn, NY 11207" />
           </section>
+          
         </section>
         
         <img src='/floweRight.svg' className='hidden md:block'/>
       </section>
+      <section className="flex flex-col items-center  justify-center">
+        <PrimaryText styles="italic mb-4 mt-4" text="Hecho con Amor por Jaime Arriola y Lesly Hernandez"/>
+        <img src='/footer.svg'/>
+      </section>
+
+      
     </main>
   )
 }
