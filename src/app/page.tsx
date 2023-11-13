@@ -16,9 +16,6 @@ import { BoldAndThinText } from '@/components/BoldAndThinText';
 import { PrimaryText } from '@/components/PrimaryText';
 import { Button } from '@/components/Button'
 
-
-
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -98,11 +95,11 @@ const Home = () =>{
        <img src='/LeftBird.svg' className='hidden md:block' alt='Left Bird Image'/>
         <section className='relative'>
         <img src='/lovers.svg' className='w-60 md:w-[445px]'/>
-          <section className='absolute bottom-[50px] left-[-20px] md:bottom-28 md:left-20'>
-            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center'>La boda de</div>
-            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center'>Jaime Arriola </div>
-            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center' >y </div>
-            <div className='text-primaryColor text-base md:text-4xl font-thin italic w-[282px] text-center' >Lesly Hernandez  </div>
+          <section className='absolute bottom-[40px] left-[-20px] md:bottom-28 md:left-20'>
+            <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center'>La boda de</div>
+            <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center'>Jaime Arriola </div>
+            <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center' >y </div>
+            <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center' >Lesly Hernandez  </div>
           </section>
         </section>
         <img src='/RightBird.svg' className='hidden md:block' alt='Right Bird Image'/>
@@ -113,9 +110,9 @@ const Home = () =>{
               width={100}
         />
         <Button/>
-        <section className='bg-gradient-to-b font-thin italic p-3 md:p-5 rounded mt-5 from-white to-primaryColor  flex flex-col items-center justify-end w-full md:w-3/4'>
-          <section className='text-sm md:text-lg text-center' >El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
-          <section className='text-sm md:text-lg'>Proverbios 18:22</section>
+        <section className=' border-solid border-primaryColor border-2 font-thin italic p-2 md:p-5 rounded mt-5 flex flex-col items-center justify-end w-96 md:w-3/4'>
+          <section className='text-sm md:text-lg text-center text-primaryColor' >El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
+          <section className='text-sm md:text-lg text-primaryColor'>Proverbios 18:22</section>
         </section>
       </section>
      <SectionSeparator/>
@@ -127,10 +124,7 @@ const Home = () =>{
       <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
       
       <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 text-center ' >Dios dibujo para si mismo sonrisas en nuestros corazones</label>
-      <Lottie options={envelopeAnimationOptions}
-              height={100}
-              width={100}
-        />
+      
       <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
      {/*  <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
       <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
@@ -156,13 +150,19 @@ const Home = () =>{
         <img className='w-full h-[500px]' src='/lovers5.jpeg' />
         <img className='w-full h-[500px]' src='/lovers6.jpeg' />
       </Carousel>
-      <Lottie options={loveAnimationOptions}
-              height={100}
-              width={100}
-        />
+        <Lottie options={loveAnimationOptions}
+                height={200}
+                width={200}
+          />
       <label className='text-primaryColor text-lg font-thin italic pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que nos vimos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
+      <section className="block md:hidden">
+        <Lottie options={envelopeAnimationOptions}
+                height={200}
+                width={200}
+          />
       </section>
-      <SectionSeparator/>
+      </section>
+      <SectionSeparator topMargin={false}/>
       <section className='flex justify-center md:justify-between items-center '>
         <img src='/heartLeft.svg' className='hidden md:block'/>
           <section className='w-96 md:w-[560px] flex justify-center flex-col' >
