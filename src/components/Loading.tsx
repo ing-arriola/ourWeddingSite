@@ -27,7 +27,7 @@ export const Loading = () => {
               height={800}
               width={800}
         />
-        <section className='absolute bottom-[200px] md:bottom-[200px] pr-5 pl-5  md:left-[100px] lg:left-[170px] xl:left-[300px]'>
+        <section className='absolute bottom-[200px] pr-5 pl-5 w-full'>
             <section className='flex justify-center items-center bg-primaryColor opacity-70 rounded-lg p-5'>
                 <label className='text-inria text-6xl md:text-9xl text-white font-extralight italic text-center w-72 md:w-[800px]'>La boda de Jaime y Lesly</label>
             </section>
