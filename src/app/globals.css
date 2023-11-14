@@ -16,7 +16,23 @@
   }
 }
 
+@font-face {
+  font-family: 'Inria Serif';
+  src: url('/fonts/InriaSerif-Bold.ttf') format('ttf'),
+  url('/fonts/InriaSerif-BoldItalic.ttf') format('ttf'),
+  url('/fonts/InriaSerif-Italic.ttf') format('ttf'),
+  url('/fonts/InriaSerif-Light.ttf') format('ttf'),
+  url('/fonts/InriaSerif-Regular.ttf') format('ttf'),
+  url('/fonts/InriaSerif-LightItalic.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-inria {
+  font-family: 'Inria Serif', iria-serif;
+}
+
+
 body {
   color: rgb(var(--foreground-rgb));
-
 }
