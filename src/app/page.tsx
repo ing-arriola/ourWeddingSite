@@ -4,6 +4,7 @@
 import Carousel from "react-multi-carousel";
 import Lottie from 'react-lottie';
 import { Modal } from 'react-responsive-modal';
+import { useRouter } from 'next/router'
 
 import 'react-responsive-modal/styles.css';
 import "react-multi-carousel/lib/styles.css";
@@ -18,7 +19,8 @@ import { SectionSeparator } from '@/components/SectionSeparator';
 import { BoldAndThinText } from '@/components/BoldAndThinText';
 import { PrimaryText } from '@/components/PrimaryText';
 import { Button } from '@/components/Button'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Loading } from "@/components/Loading";
 
 const responsive = {
   desktop: {
@@ -86,6 +88,7 @@ const thanksAnimationOptions = {
 
 
 const Home = () =>{
+  const [loading, setLoading] = useState(true)
   const [open, setOpen] = useState(false);
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
@@ -101,23 +104,30 @@ const Home = () =>{
     }
   }
 
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 4000)
+  }, [])
+
   return (
     <main>
-      <Modal open={open} onClose={onCloseModal} center>
+      {
+        loading ? <Loading/> : (
+          <>
+            <Modal open={open} onClose={onCloseModal} center>
         <section className="flex justify-center items-center flex-col p-8">
           <PrimaryText text="Ingresa la contraseña que te enviamos"/>
           <input onChange={(e)=>{setpassword(e.target.value)}} value={password} className="border-solid border-primaryColor border-2 mb-5 mt-5 text-primaryColor"/>
           <Button label="Confirmar" onClick={checkPassword} />
         </section>
       </Modal>
-      <section className='flex justify-between w-full'>
-        <img src='/flowersTopLeft.svg' className='w-28 md:w-40 '/>
+      <section className='flex justify-center w-full'>
+        <img src='/flowersTopLeft.svg' className='absolute left-0 w-28 md:w-60'/>
         <section className='flex items-center'>
-          <div className='text-primaryColor font-thin italic text-base md:text-2xl text-center'>Unidos por el proposito de Dios</div>
+          <div className='text-primaryColor font-extralight italic text-base md:text-3xl text-center w-48 mt-10 md:w-72 lg:w-80'>Unidos por el proposito de Dios</div>
         </section>
-        <img src='/FlowersTopRight.svg' className='w-28 md:w-40'/>
+        <img src='/FlowersTopRight.svg' className='absolute right-0 w-28 md:w-60'/>
       </section>
-      <section className='flex justify-center md:justify-between '>
+      <section className='flex mt-10 justify-center md:justify-between '>
        <img src='/LeftBird.svg' className='hidden md:block' alt='Left Bird Image'/>
         <section className='relative'>
           <img src='/lovers.svg' className='w-60 md:w-[445px]'/>
@@ -136,7 +146,7 @@ const Home = () =>{
               width={220}
         />
         <Button onClick={onOpenModal} label="Confirma tu asistencia"/>
-        <section className=' border-solid border-primaryColor border-2 font-thin italic p-2 md:p-3 rounded mt-5 flex flex-col items-center justify-end w-96 md:w-3/5'>
+        <section className=' border-solid border-primaryColor border-2 font-thin italic p-2 md:p-3 rounded mt-5 flex flex-col items-center justify-end w-80 md:w-4/5 lg:w-3/5'>
           <section className='text-sm md:text-lg text-center text-primaryColor' >El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
           <section className='text-sm md:text-lg text-primaryColor'>Proverbios 18:22</section>
         </section>
@@ -146,7 +156,7 @@ const Home = () =>{
 
       <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
       
-      <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 mb-8 mr-4 ml-8 md:mb-0 text-center '>Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <label className='text-primaryColor text-lg md:text-2xl font-extralight italic mt-4 md:mt-0 mb-8 mr-4 ml-8 md:mb-0 text-center '>Dios dibujo para si mismo sonrisas en nuestros corazones</label>
       
       <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
 
@@ -170,7 +180,7 @@ const Home = () =>{
                 height={200}
                 width={200}
           />
-      <label className='text-primaryColor text-lg font-thin italic pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que nos vimos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
+      <label className='text-primaryColor text-lg font-extralight italic pr-14 pl-14 md:pr-24 md:pl-24' >La primera vez que hablamos fue por un correo y no imaginamos que ese primer contacto, seria el inicio de una historia que aun hoy en dia se continua escribiendo. La primera vez que nos vimos fue por video llamada y ninguno de los 2 imagino que un dia anhelariamos conocernos en persona. Luego de 1 año de amistad finalmente dimos el paso de estar juntos, bajo circunstancias que no imaginamos, empezamos a volar juntos. Luego decidimos que era hora hora de soñar con estar juntos toda la vida y en el primer viaje de Jaime a New York, nos comprometimos y aunque en aquel momento no sabiamos cuando nos casariamos,si sabiamos que nuestros corazones fueron formados en la eternidad para caminar juntos toda la vida con Dios como fundamento de nuestro matrimonio.</label>
 
         <Lottie options={envelopeAnimationOptions}
                 height={200}
@@ -182,7 +192,7 @@ const Home = () =>{
       <section className='flex justify-center md:justify-between items-center '>
         <img src='/heartLeft.svg' className='hidden md:block'/>
           <section className='w-96 md:w-[560px] flex justify-center flex-col' >
-            <label className=' text-primaryColor text-xl md:text-3xl font-thin italic text-center'>Quieres hacernos un regalo en efectivo? Utiliza los siguientes medios</label>
+            <label className=' text-primaryColor text-xl md:text-3xl font-extralight italic text-center'>Quieres hacernos un regalo en efectivo? Utiliza los siguientes medios</label>
             <Lottie options={giftAnimationOptions}
               height={100}
               width={100}
@@ -211,7 +221,7 @@ const Home = () =>{
         <img src='/flowerLeft.svg' className='hidden md:block' />
         <section className='flex items-center justify-center flex-col'>
           <section className='flex justify-center '>
-            <label className=' text-primaryColor text-2xl md:text-3xl font-thin italic text-center'>Acompañanos en nuestro dia especial</label>
+            <label className=' text-primaryColor text-2xl md:text-3xl font-extralight italic text-center'>Acompañanos en nuestro dia especial</label>
           </section>
           <section className='flex flex-col justify-center items-center'>
             <PrimaryText styles="mt-4" text="Fecha: 23 de diciembre" />
@@ -245,7 +255,9 @@ const Home = () =>{
         <img src='/footer.svg'/>
       </section>
 
-      
+          </>
+        )
+      }
     </main>
   )
 }
