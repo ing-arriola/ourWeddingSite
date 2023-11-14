@@ -22,7 +22,29 @@ const birdsAnimtationOptions = {
 
 export const Loading = () => {
   return (
-    <div className='flex justify-center items-center'>
+    
+    <div className='flex justify-center items-center w-screen h-screen'>
+        <section className=' absolute'>
+            <Lottie options={loadinganimationOptions}
+                height={900}
+                width={900}
+            />
+        </section>
+        <section className='pr-5 pl-5 w-screen'>
+            <section className='flex justify-center bg-primaryColor opacity-70 rounded-lg p-5'>
+                <label className='text-inria text-6xl md:text-9xl text-white font-extralight italic text-center'>La boda de Jaime y Lesly</label>
+            </section>
+            <Lottie options={birdsAnimtationOptions}
+              height={200}
+              width={200}
+        />
+        </section>
+        
+    </div>
+  )
+}
+
+{/* <div className='flex justify-center items-center'>
         <Lottie options={loadinganimationOptions}
               height={800}
               width={800}
@@ -37,6 +59,4 @@ export const Loading = () => {
         />
         </section>
         
-    </div>
-  )
-}
+    </div> */}
