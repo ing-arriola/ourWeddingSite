@@ -3,6 +3,9 @@
 
 import Carousel from "react-multi-carousel";
 import Lottie from 'react-lottie';
+import { Modal } from 'react-responsive-modal';
+
+import 'react-responsive-modal/styles.css';
 import "react-multi-carousel/lib/styles.css";
 
 import * as animationData from '@/helpers/heartsAnimation.json'
@@ -15,6 +18,7 @@ import { SectionSeparator } from '@/components/SectionSeparator';
 import { BoldAndThinText } from '@/components/BoldAndThinText';
 import { PrimaryText } from '@/components/PrimaryText';
 import { Button } from '@/components/Button'
+import { useState } from "react";
 
 const responsive = {
   desktop: {
@@ -82,8 +86,30 @@ const thanksAnimationOptions = {
 
 
 const Home = () =>{
+  const [open, setOpen] = useState(false);
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+  const [password, setpassword] = useState('')
+  const numbersArray = Array.from({ length: 16 }, (_, index) => index + 1);
+
+
+  const checkPassword = () => {
+    if(password === process.env.NEXT_PUBLIC_PASSWORD){
+      onCloseModal();
+      setpassword('')
+      window.open('https://forms.gle/M6CiPFXjXkkrbDpi8', '_blank');
+    }
+  }
+
   return (
     <main>
+      <Modal open={open} onClose={onCloseModal} center>
+        <section className="flex justify-center items-center flex-col p-8">
+          <PrimaryText text="Ingresa la contraseña que te enviamos"/>
+          <input onChange={(e)=>{setpassword(e.target.value)}} value={password} className="border-solid border-primaryColor border-2 mb-5 mt-5 text-primaryColor"/>
+          <Button label="Confirmar" onClick={checkPassword} />
+        </section>
+      </Modal>
       <section className='flex justify-between w-full'>
         <img src='/flowersTopLeft.svg' className='w-28 md:w-40 '/>
         <section className='flex items-center'>
@@ -94,9 +120,9 @@ const Home = () =>{
       <section className='flex justify-center md:justify-between '>
        <img src='/LeftBird.svg' className='hidden md:block' alt='Left Bird Image'/>
         <section className='relative'>
-        <img src='/lovers.svg' className='w-60 md:w-[445px]'/>
-          <section className='absolute bottom-[40px] left-[-20px] md:bottom-28 md:left-20'>
-            <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center'>La boda de</div>
+          <img src='/lovers.svg' className='w-60 md:w-[445px]'/>
+          <section className='absolute bottom-[40px] left-[-20px] md:bottom-[75px] md:left-20'>
+            <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center'>Invitacion a la boda de</div>
             <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center'>Jaime Arriola </div>
             <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center' >y </div>
             <div className='text-primaryColor text-lg md:text-4xl font-thin italic w-[282px] text-center' >Lesly Hernandez  </div>
@@ -109,8 +135,8 @@ const Home = () =>{
               height={100}
               width={220}
         />
-        <Button/>
-        <section className=' border-solid border-primaryColor border-2 font-thin italic p-2 md:p-5 rounded mt-5 flex flex-col items-center justify-end w-96 md:w-3/4'>
+        <Button onClick={onOpenModal} label="Confirma tu asistencia"/>
+        <section className=' border-solid border-primaryColor border-2 font-thin italic p-2 md:p-3 rounded mt-5 flex flex-col items-center justify-end w-96 md:w-3/5'>
           <section className='text-sm md:text-lg text-center text-primaryColor' >El que halla esposa halla el bien, Y alcanza la benevolencia de Jehová.</section>
           <section className='text-sm md:text-lg text-primaryColor'>Proverbios 18:22</section>
         </section>
@@ -123,7 +149,7 @@ const Home = () =>{
       </section> */}
       <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
       
-      <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 text-center '>Dios dibujo para si mismo sonrisas en nuestros corazones</label>
+      <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 mb-8 mr-4 ml-8 md:mb-0 text-center '>Dios dibujo para si mismo sonrisas en nuestros corazones</label>
       
       <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
      {/*  <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
@@ -143,12 +169,8 @@ const Home = () =>{
         itemClass='flex items-center justify-center w-96 h-96'
         containerClass='h-[500px] w-80 md:w-1/2 rounded'
         >
-        <img className='w-full h-[500px]' src='/lovers1.jpeg' />
-        <img className='w-full h-[500px]' src='/lovers2.jpg' />
-        <img className='w-full h-[500px]' src='/lovers3.jpeg' />
-        <img className='w-full h-[500px]' src='/lovers4.jpg' />
-        <img className='w-full h-[500px]' src='/lovers5.jpeg' />
-        <img className='w-full h-[500px]' src='/lovers6.jpeg' />
+          {numbersArray.map(number => (<img key={number} className='w-full h-[500px]' src={`/lovers${number}.jpg`} alt={`lovers${number}`} />))}
+        
       </Carousel>
         <Lottie options={loveAnimationOptions}
                 height={200}
@@ -205,9 +227,18 @@ const Home = () =>{
             <BoldAndThinText boldText='Hora:' thinText=' 3:30 PM - 5:00 PM'/>
             <BoldAndThinText boldText='Lugar: ' thinText='Iglesia Cristiana Rey de Reyes'/>
             <PrimaryText  thin text='2902 Fulton St, Brooklyn, NY 11207' />
-            <PrimaryText styles="mb-4 mt-4" text="Recepcion" />
+            <a  href="https://maps.app.goo.gl/q7Aa5kKgSfEtCCor5" target="_blank" className="flex items-center mt-5">
+              <img src='/map.png' className='w-8'/>
+              <label className="text-primaryColor cursor-pointer" >Ver Mapa</label>
+            </a>        
+            <PrimaryText styles="mb-4 mt-8" text="Recepcion" />
             <BoldAndThinText boldText="Hora: " thinText="6:00 PM - 9:30 PM" />
             <BoldAndThinText boldText="Lugar: " thinText="193 Bradford St, Brooklyn, NY 11207" />
+            <a href="https://maps.app.goo.gl/13s5kVRqwhzXBaxh8" target="_blank" className="flex items-center mt-5">
+            <img src='/map.png' className='w-8'/>
+            <label className="text-primaryColor"  >Ver mapa</label>
+            </a>
+            
           </section>
           
         </section>
@@ -215,7 +246,8 @@ const Home = () =>{
         <img src='/floweRight.svg' className='hidden md:block'/>
       </section>
       <section className="flex flex-col items-center  justify-center">
-        <PrimaryText styles="italic mb-4 mt-4" text="Hecho con Amor por Jaime Arriola y Lesly Hernandez"/>
+        <PrimaryText styles="italic mt-4" text="Hecho con Amor por "/>
+        <PrimaryText styles="mb-4" text="Jaime Arriola y Lesly Hernandez" />
         <img src='/footer.svg'/>
       </section>
 
@@ -225,3 +257,5 @@ const Home = () =>{
 }
 
 export default Home
+
+//
