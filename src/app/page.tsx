@@ -143,19 +143,13 @@ const Home = () =>{
       </section>
      <SectionSeparator bottomMargin={false}/>
      <section className='flex flex-col md:flex-row justify-center items-center' >
-      {/* <section className='flex justify-between w-full block md:hidden'>
-      <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
-      <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
-      </section> */}
+
       <img src='/leftDecSec2.svg' className='w-16 md:w-44 hidden md:block'/>
       
       <label className='text-primaryColor text-lg md:text-2xl font-thin italic mt-4 md:mt-0 mb-8 mr-4 ml-8 md:mb-0 text-center '>Dios dibujo para si mismo sonrisas en nuestros corazones</label>
       
       <img src='/rightSecDec2.svg' className='w-16 md:w-44 hidden md:block'/>
-     {/*  <section className='flex flex-row-reverse justify-between w-full block md:hidden'>
-      <img src='/leftDecSec2.svg' className='w-16 md:w-44'/>
-      <img src='/rightSecDec2.svg' className='w-16 md:w-44'/>
-      </section> */}
+
      </section>
       <section className='flex flex-col justify-center items-center'>
         
@@ -257,5 +251,3 @@ const Home = () =>{
 }
 
 export default Home
-
-//
